@@ -87,12 +87,67 @@
 \section{Introduction}
 
 \subsection{Multimodality}
+"Multimodal" in the context of machine learning typically refers to models or systems that can process and understand information from multiple types of input, such as text, images, and sound.\cite{zhihu2023}
+
+
+In the early days of computing, the primary mode of interaction was text. Computers were primarily tools for mathematical computations and basic data storage, and the primary focus was on text-based input and output.
+
+
+With the advent of more powerful computers and graphical user interfaces (GUIs) in the late 20th century, images and sounds began to play a more significant role in computing. This led to the development of models and algorithms that could process not just text but also images and sounds.
+
+
+
+In the 21st century, with the proliferation of devices equipped with cameras, microphones, and other sensors, the importance of being able to process multiple modes of input simultaneously became even more pronounced. This era saw the rise of truly multimodal systems capable of understanding and generating content across text, images, sound, and even video.
+
+
+
+The evolution of multimodal systems mirrors the evolution of computing itself, from basic text processing to the rich, multimedia experiences we have today. As technology continues to advance, we can expect even more integration of different modalities, leading to more intuitive and powerful computing experiences.\cite{csdn2023}
 
 \subsection{Large Language Model: Deficiencies}
+\begin{enumerate}
+
+\noindent \textbf{Limited Data Type Handling}: Large language models primarily process textual data and cannot directly manage images, sounds, or other non-textual data. In contrast, multimodal models can analyze and generate content across multiple data types.
+
+
+
+\noindent \textbf{Lack of Intuitive Understanding}: When tasks related to images, audio, or other data modalities arise, pure text models might not offer an intuitive understanding or response. For instance, a text-centric model might struggle to interpret or comment on the content within an image, whereas a multimodal model can.
+
+
+
+\noindent \textbf{Interaction Limitations}: In interactions with users, large language models can only communicate through text. Multimodal models, on the other hand, can interact with users through images, audio, and other modes, offering a richer and more diverse experience.
+
+
+
+\noindent \textbf{Task Restrictiveness}: For tasks that demand simultaneous handling of various data modalities, singular text models may face challenges. For instance, a task might require analyzing an image and its associated description simultaneously, where a multimodal approach would be more appropriate.
+
+
+
+\noindent \textbf{Complexity and Diversity}: As the complexity and diversity of AI applications grow, relying solely on text models might not suffice to meet all requirements. Multimodal models, with their capability to process multiple data modalities, thus offer greater adaptability and flexibility.
+
+
+
+\noindent \textbf{Completeness of Perception}: Humans typically rely on several senses (e.g., visual, auditory, tactile) to understand the world. Utilizing only text models might not wholly emulate this multimodal perceptual experience.\cite{enwiki:1181088602}
+
+\end{enumerate}
+
 
 \subsection{Challenges}
+\begin{enumerate}
+    \noindent \textbf{Data Alignment}: Integrating information from different modalities often requires precise temporal and spatial alignment. Any misalignment can lead to ineffective or even misleading results.
+    
+    \noindent \textbf{Data Representation}: Choosing an appropriate representation for each modality, as well as a unified representation for all combined modalities, remains a significant challenge. 
+    
+    \noindent \textbf{Scalability}: With the addition of each new modality, the complexity of the model can grow exponentially. Ensuring that the computational and memory requirements do not explode is essential.
+    
+    \noindent \textbf{Inter-modality Gaps}: Differences in the nature of data from different modalities can make it challenging to create a cohesive model that learns from all modalities equally effectively.
+    
+    \noindent \textbf{Annotation and Labeling}: Obtaining ground truth labels for multimodal data can be time-consuming and expensive. Semi-supervised or unsupervised approaches might be required.
+    
+    \noindent \textbf{Transfer Learning and Generalization}: Models trained on specific multimodal datasets may not generalize well to other scenarios or modalities. Transfer learning in a multimodal context is still an open challenge.
+    
+    \noindent \textbf{Interpretablility}: Understanding the contribution of each modality to the final decision or output of the model is crucial for trust and further model improvement.\cite{9361559}
+\end{enumerate}
 
-\subsection{Tasks and Applications}
 
 \section{Methods}
 A multimodal large language model (MLLM) leverages the idea of \textit{natural language supervision} \citep{DBLP:conf/icml/RadfordKHRGASAM21} to enhance the model's awareness of an entity through various input channels by taking advantage of the \textit{emergent capabilities} \citep{DBLP:journals/tmlr/WeiTBRZBYBZMCHVLDF22} of  large language models (LLM), such that a unimodal LLM multi-step can achieve reasoning \citep{DBLP:journals/corr/abs-2112-11446} and instruction following \citep{DBLP:conf/nips/Ouyang0JAWMZASR22}. To limit the scope, this survey focuses on \textbf{Vision-Language Models} (VLM) that accepts textual tokens and images and details the methods to construct a joint feature space for two modalities via step-by-step feature transforming. 
